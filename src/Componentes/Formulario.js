@@ -9,10 +9,9 @@ class Formulario extends Component {
         e.preventDefault();
         // leer los refs y crear el objeto
         const respuesta = {
-            cuidad: this.cuidadRef.current.value,
-            pais: this.paisrRef.current.value
+            ciudad: this.ciudadRef.current.value,
+            pais: this.paisRef.current.value
         }
-        console.log(respuesta);
         // enviar por props
         this.props.datosConsulta(respuesta);
         //reset form (opcional)
@@ -25,7 +24,7 @@ class Formulario extends Component {
                     <div className="row">
                         <form onSubmit={this.buscarClima}>
                             <div className="input-field col s12 n8 l4 offset-m2">
-                                <input ref={this.cuidadRef} id="cuidad" type="text"/>
+                                <input ref={this.ciudadRef} id="cuidad" type="text"/>
                                 <label htmlFor="cuidad">Cuidad</label>
                             </div>
                             <div className="nput-field col s12 n8 l4 offset-m2">
