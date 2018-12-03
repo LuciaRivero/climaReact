@@ -14,7 +14,9 @@ class App extends Component {
     resultado: {}
   }
   componentDidUpdate(prevProps,prevState) {
-    if (prevState.consulta != this.state.consulta) {
+    //verifica si el state cambio en el caso que sea distinto 
+    // actualiza y muestra otro resultado sino no.
+    if (prevState.consulta !== this.state.consulta) {
       this.consultarApi();
     }
   }
@@ -47,9 +49,6 @@ class App extends Component {
       .catch(error => {
         console.log(error)
       })
-    
-
-    // consultar fetch
   }
 
   datosConsulta = respuesta => {
